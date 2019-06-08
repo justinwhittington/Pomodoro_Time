@@ -1,15 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import Buttons from './components/Buttons';
+import {vibrate} from './utils';
+import {Buttons, Timer} from './components';
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { time: 25, break: 5 }
+  }
   
   render() {
     
     return (
       <View style={styles.container}>
         <Text>Hello There Ezra</Text>
-        <Buttons></Buttons>
+        <Timer />
+        <Buttons
+        />
       </View>
     );
   }
@@ -25,7 +32,5 @@ const styles = StyleSheet.create({
 });
 
 
-// import {vibrate} from './utils'
 
-// // causes phone to vibrate
-// vibrate()
+
