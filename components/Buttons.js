@@ -2,39 +2,66 @@ import React from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 import {vibrate} from '../utils'
 
-export default class Buttons extends React.Component {
-    handlePress = (res) => {
-        console.log('click')
-        vibrate()
-    }
-    
-    render() {
-        return (
-            <View
-            style={styles.container}>
-                <Button
-                style={styles.button}
+
+const Buttons = (props) => {
+    return (
+        <View style={styles.container}>
+            <Button
+            style={styles.button}
             title='Start'
             color='green'
-            onPress={this.handlePress}
+            onPress={props.onStart}
             />
             <Button
             style={styles.button}
             title='Pause'
             color='blue'
-            onPress={this.handlePress}
+            onPress={props.onPause}
             />
             <Button
             style={styles.button}
-            title='Stop'
+            title='Reset'
             color='red'
-            onPress={this.handlePress}
+            onPress={props.onReset}
             />
-            </View>
-        
-        );
-    }
+        </View>    
+            );
 }
+
+export default Buttons;
+// export default class Buttons extends React.Component {
+//     handlePress = (res) => {
+//         console.log('click')
+//         vibrate()
+//     }
+    
+//     render() {
+//         return (
+//             <View
+//             style={styles.container}>
+//                 <Button
+//                 style={styles.button}
+//             title='Start'
+//             color='green'
+//             onPress={this.handlePress}
+//             />
+//             <Button
+//             style={styles.button}
+//             title='Pause'
+//             color='blue'
+//             onPress={this.handlePress}
+//             />
+//             <Button
+//             style={styles.button}
+//             title='Stop'
+//             color='red'
+//             onPress={this.handlePress}
+//             />
+//             </View>
+        
+//         );
+//     }
+// }
 
 const styles = StyleSheet.create({
     container: {

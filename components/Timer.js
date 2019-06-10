@@ -1,12 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View} from 'react-native';
+import { propTypes } from 'react-native/Libraries/Modal/Modal';
 
-export default class Timer extends React.Component {
-    render() {
-        return (
-            <View>
-                <Text>hi time</Text>
-            </View>
-        )
-    }
+const Timer = (props) => {
+    return (
+        <View>
+            <Text>Count: {props.count}</Text>
+            <Text>Break: {props.break}</Text>
+        </View>
+    )
 }
+
+export default Timer;
